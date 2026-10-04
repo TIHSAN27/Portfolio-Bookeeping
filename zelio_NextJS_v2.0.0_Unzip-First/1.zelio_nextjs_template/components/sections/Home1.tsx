@@ -1,5 +1,6 @@
 
 import Link from "next/link"
+import CursorPortrait from "@/components/elements/CursorPortrait"
 
 export default function Home1() {
 	return (
@@ -45,7 +46,9 @@ export default function Home1() {
 					</div>
 				</div>
 				<div className="shape-1 position-absolute bottom-0 start-50 z-1 ms-10 d-none d-md-block">
-					<img className="position-relative z-1" src="/assets/imgs/hero/hero-1/man.svg" alt="Bookkeeping dashboard illustration" />
+					<div className="position-relative z-1">
+						<CursorPortrait />
+					</div>
 					<div className="position-absolute top-50 start-0 translate-middle z-0 mt-8 ms-10 ps-8">
 						<img className="ribbonRotate" src="/assets/imgs/hero/hero-1/decorate.png" alt="" />
 					</div>

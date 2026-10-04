@@ -10,7 +10,7 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 				<div className="mobile-header-wrapper-inner">
 					<div className="mobile-header-logo">
 						<Link className="d-flex main-logo align-items-center d-inline-flex" href="/">
-							<img src="/assets/imgs/profile/taimoor.jpg" alt="Taimoor Ihsan" style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'cover' }} />
+							<img src="/assets/imgs/profile/taimoor-cutout.png" alt="Taimoor Ihsan" style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'cover', objectPosition: 'center top', background: 'linear-gradient(135deg, #6e4ef2, #8c71ff)' }} />
 							<span className="fs-4 ms-2 text-dark">Taimoor Ihsan</span>
 						</Link>
 						<div className={`burger-icon burger-icon-white border rounded-3 ${isMobileMenu ? 'burger-close' : ''}`} onClick={handleMobileMenu}>
