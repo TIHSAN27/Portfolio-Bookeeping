@@ -45,7 +45,7 @@ export default function Resume1() {
 										<div className="d-flex align-items-end">
 											<div>
 												<p className="fw-extra-bold text-linear-1 mb-2">UMT, Lahore</p>
-												<h5>B.S. Accounting &amp; Finance</h5>
+												<h5>Bachelor's Degree, Finance and Technology</h5>
 												<p className="text-300 mb-0">University of Management and Technology</p>
 											</div>
 											<h3 className="text-linear-1 ms-auto fw-semibold fs-6">BS</h3>
