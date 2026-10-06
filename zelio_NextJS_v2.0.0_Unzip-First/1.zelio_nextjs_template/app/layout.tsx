@@ -7,30 +7,35 @@ import "/public/assets/css/main.css"
 import "./cursor-portrait.css"
 
 import type { Metadata } from "next"
-import { Urbanist, Playfair_Display, DM_Mono } from "next/font/google"
+import localFont from "next/font/local"
 
-const urbanist = Urbanist({
-	weight: ['300', '400', '500', '600', '700'],
-	subsets: ['latin'],
+const urbanist = localFont({
+	src: './fonts/urbanist-latin.woff2',
+	weight: '300 700',
 	variable: "--urbanist",
 	display: 'swap',
 })
-const playfair_display = Playfair_Display({
-	weight: ['400', '500', '600', '700'],
-	subsets: ['latin'],
+const playfair_display = localFont({
+	src: [
+		{ path: './fonts/playfair-latin.woff2', weight: '400 700', style: 'normal' },
+		{ path: './fonts/playfair-italic.ttf', weight: '400', style: 'italic' },
+	],
 	variable: "--playpair",
 	display: 'swap',
 })
-const dmMono = DM_Mono({
-	weight: ['300', '400', '500'],
-	subsets: ['latin'],
+const dmMono = localFont({
+	src: [
+		{ path: './fonts/dm-mono-light-latin.woff2', weight: '300' },
+		{ path: './fonts/dm-mono-latin.woff2', weight: '400' },
+		{ path: './fonts/dm-mono-medium-latin.woff2', weight: '500' },
+	],
 	variable: "--dmMono",
 	display: 'swap',
 })
 
 export const metadata: Metadata = {
 	title: "Muhammad Taimoor Ihsan | Remote Bookkeeper & Financial Reporting Specialist",
-	description: "Detail-driven accountant and bookkeeper (CA, ICAP) with 5+ years of full-charge bookkeeping, accounts payable/receivable, and GAAP/IFRS financial reporting for multi-entity US & Canada clients. QuickBooks Certified ProAdvisor, Xero Certified.",
+	description: "Remote bookkeeper and financial reporting specialist with 5+ years of full-charge bookkeeping, accounts payable/receivable, and financial reporting for US and Canadian clients. QuickBooks Certified ProAdvisor and Xero Certified Advisor.",
 }
 
 export default function RootLayout({
