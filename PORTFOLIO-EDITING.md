@@ -7,6 +7,7 @@ The Next.js application is in `zelio_NextJS_v2.0.0_Unzip-First/1.zelio_nextjs_te
 ## Editing
 
 - `components/portfolio/content.ts`: services, experience, qualifications, project details, portrait paths, and contact links.
+- The `upwork` object stores the visible profile snapshot. Its title, rate, earnings, completed jobs, feedback count, and skills were checked through the Upwork connector on 6 October 2026. The retained 100% Job Success, Rising Talent, and 5.0 rating are from the previously approved portfolio; the connector did not expose those fields in this refresh. The section links to the live profile for current badges and feedback.
 - `components/portfolio/BookkeepingPortfolio.tsx`: sections, mobile navigation, project dialog, and portrait movement.
 - `app/portfolio.css`: scoped homepage styles, responsive layouts, and animation.
 - `public/assets/imgs/profile/taimoor-character.png`: generated full-body portrait.
@@ -26,3 +27,5 @@ The user approved uploading this generated portrait to DevMotion. The upload suc
 Experience, degree, credentials, Upwork claims, and the $5M+ figure are carried over from the existing portfolio, not newly verified. No new employers, testimonials, or qualifications were invented. Project graphics are explicitly illustrative. Projects open in accessible dialogs rather than linking to old template pages. The homepage has email and Upwork contact, a LinkedIn profile link, and no phone number or message form.
 
 The previous template's secondary routes remain available at their existing URLs; the redesigned homepage does not link to them.
+
+The ID card has two faces and flips on mouse hover, tap, or keyboard activation. Pointer exit resets the temporary hover state; clicking can keep a face selected. The hidden face is excluded from the accessibility tree. Reduced motion switches faces without the rotation transition.

@@ -70,8 +70,20 @@ body:has(.folio) { margin: 0; background: #f4f1e8; }
 .fp-about-copy .fp-intro { color: var(--ink); font-size: 20px; line-height: 1.5; margin-bottom: 22px; }
 .fp-inline-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 28px; font-size: 12px; font-weight: 600; }
 .fp-inline-links a { border-bottom: 1px solid #77796e; padding-bottom: 5px; }
-.fp-id-card { background: #fcfaf4; border: 1px solid #d8d6c9; padding: 32px 23px 15px; border-radius: 15px; text-align: center; position: relative; transform: rotate(5deg); box-shadow: 4px 12px 20px #383a2810; transition: transform .4s; }
-.fp-id-card:hover { transform: rotate(0deg) translateY(-5px); }
+.fp-id-card { display: block; width: 100%; background: none; border: 0; padding: 0; border-radius: 15px; text-align: center; position: relative; perspective: 1100px; transform: rotate(5deg); transition: transform .4s; }
+.fp-id-card.is-flipped { transform: rotate(0deg) translateY(-5px); }
+.fp-card-flipper { display: grid; transform-style: preserve-3d; transition: transform .75s cubic-bezier(.22,.8,.3,1); }
+.fp-id-card.is-flipped .fp-card-flipper { transform: rotateY(180deg); }
+.fp-card-face { display: block; grid-area: 1 / 1; min-height: 385px; padding: 32px 23px 15px; background: #fcfaf4; border: 1px solid #d8d6c9; border-radius: 15px; position: relative; backface-visibility: hidden; -webkit-backface-visibility: hidden; box-shadow: 4px 12px 20px #383a2810; }
+.fp-card-back { transform: rotateY(180deg); background: #303b32; color: #f4f1e8; }
+.fp-card-name { display: block; font-size: 23px; font-weight: 600; line-height: 1.35; letter-spacing: -1px; margin-bottom: 8px; }
+.fp-card-bio { display: block; font-size: 12px; color: var(--muted); line-height: 1.65; }
+.fp-flip-hint { display: block; position: absolute; top: calc(100% + 12px); left: 0; width: 100%; font-size: 10px; color: var(--muted); letter-spacing: .3px; }
+.fp-card-specialties { display: grid; gap: 10px; text-align: left; padding: 22px 0; font-size: 10px; line-height: 1.55; }
+.fp-card-back-note { display: block; font-size: 10px; line-height: 1.8; color: #d1d9c9; }
+.fp-card-email { display: block; font-size: 10px; overflow-wrap: anywhere; margin: 18px 0 22px; color: #e6eadb; }
+.fp-card-back .fp-card-top > span:last-child { color: #cedcac; }
+.fp-card-back .fp-card-bottom { border-color: #66715f; }
 .fp-lanyard { position: absolute; width: 27px; height: 72px; background: #893e3a; top: -62px; left: calc(50% - 13px); border-left: 5px solid #713532; border-right: 5px solid #713532; transform: rotate(-7deg); z-index: 1; }
 .fp-card-slot { width: 55px; height: 6px; border-radius: 10px; background: #d9d7ca; position: absolute; top: 15px; left: calc(50% - 27px); }
 .fp-card-top { display: flex; gap: 16px; justify-content: space-between; font: 8px var(--dmMono),monospace; align-items: center; text-align: left; margin-bottom: 20px; letter-spacing: 1px; }
@@ -142,6 +154,31 @@ body:has(.folio) { margin: 0; background: #f4f1e8; }
 .fp-project-title > span { font-size: 25px; }
 .fp-project-subtitle { display: block; font-size: 12px; color: var(--muted); margin-top: 7px; }
 .fp-work-note { font-size: 10px; color: var(--muted); margin-top: 30px !important; }
+.fp-upwork { padding-bottom: 75px; }
+.fp-upwork-heading { display: flex; align-items: center; justify-content: space-between; gap: 25px; margin-bottom: 25px; }
+.fp-upwork-heading h2 { font-size: 43px; margin-bottom: 0; }
+.fp-upwork-panel { background: #fafbf4; border: 1px solid #cdd7bf; border-radius: 16px; padding: 30px; }
+.fp-upwork-person { display: flex; gap: 17px; align-items: center; padding-bottom: 25px; }
+.fp-upwork-person > img { flex-shrink: 0; width: 70px; height: 70px; object-fit: cover; object-position: center 25%; border-radius: 50%; border: 3px solid #e1ead5; }
+.fp-upwork-wordmark { color: #28673d; font-size: 21px; font-weight: 700; letter-spacing: -1px; line-height: 1; display: block; margin-bottom: 7px; }
+.fp-upwork-person h3 { font-size: 21px; font-weight: 600; line-height: 1.4; letter-spacing: -.4px; }
+.fp-upwork-person p { font-size: 12px; color: var(--muted); margin-top: 5px; max-width: 520px; }
+.fp-upwork-rate { margin-left: auto; flex-shrink: 0; text-align: right; }
+.fp-upwork-rate strong { display: block; font-size: 30px; font-weight: 500; letter-spacing: -1px; }
+.fp-upwork-rate small { font-size: 15px; letter-spacing: 0; }
+.fp-upwork-rate > span { display: block; font-size: 10px; color: var(--muted); }
+.fp-upwork-stats { display: grid; grid-template-columns: repeat(5,1fr); border-block: 1px solid #d8dfce; padding: 22px 0; }
+.fp-upwork-stats > div { display: flex; align-items: center; flex-direction: column; gap: 2px; border-right: 1px solid #d8dfce; padding: 0 9px; text-align: center; }
+.fp-upwork-stats > div:last-child { border: 0; }
+.fp-upwork-icon { color: #3b7139; font-size: 20px; height: 33px; line-height: 1.3; }
+.fp-upwork-stats strong { font-size: 31px; font-weight: 500; line-height: 1.3; letter-spacing: -.7px; }
+.fp-upwork-stats strong small { font-size: 16px; color: var(--muted); }
+.fp-upwork-stats .fp-upwork-talent { font-size: 23px; line-height: 40px; }
+.fp-upwork-stats > div > span:last-child { color: var(--muted); font-size: 10px; line-height: 1.6; }
+.fp-upwork-skills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 23px; }
+.fp-upwork-skills > span { font-size: 10px; padding: 5px 11px; background: #e9eedd; border-radius: 20px; color: #405439; }
+.fp-upwork-footer { display: flex; justify-content: space-between; gap: 18px; margin-top: 20px; font-size: 10px; color: var(--muted); }
+.fp-upwork-footer > a { color: #376131; border-bottom: 1px solid #a6ba94; padding-bottom: 2px; }
 .fp-journey { border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1.2fr; gap: 110px; }
 .fp-journey-intro { max-width: 320px; font-size: 14px; color: var(--muted) !important; }
 .fp-credentials { margin-top: 36px; }
@@ -204,6 +241,9 @@ body:has(.folio) { margin: 0; background: #f4f1e8; }
   .fp-journey { grid-template-columns: 1fr; gap: 30px; }.fp-timeline h3 { font-size: 22px; }.fp-journey-intro { max-width: none; }.fp-credentials { margin-top: 30px; }.fp-credentials h4 { font-size: 13px; }
   .fp-contact { padding-top: 35px; }.fp-contact-top .fp-eyebrow { font-size: 8px; letter-spacing: .8px; }.fp-contact-top .fp-availability { font-size: 9px; }.fp-contact-main { display: block; padding: 15px 0 40px; }.fp-contact h2 { font-size: 43px; }.fp-contact-main p { font-size: 13px; }.fp-contact footer { flex-direction: column; gap: 14px; }.fp-contact footer > div { justify-content: space-between; }
   .fp-dialog { padding: 45px 25px 28px; }.fp-dialog h2 { font-size: 28px; }
+  .fp-upwork { padding-bottom: 55px; }.fp-upwork-heading { display: block; }.fp-upwork-heading h2 { font-size: 38px; }.fp-upwork-heading .fp-button { margin-top: 23px; }.fp-upwork-panel { padding: 22px 16px; }
+  .fp-upwork-person { flex-wrap: wrap; gap: 12px; }.fp-upwork-person > img { width: 54px; height: 54px; }.fp-upwork-person > div:not(.fp-upwork-rate) { flex: 1; min-width: 0; }.fp-upwork-person h3 { font-size: 17px; }.fp-upwork-person p { font-size: 11px; }.fp-upwork-rate { display: flex; align-items: baseline; justify-content: space-between; width: 100%; border-top: 1px solid #d8dfce; padding-top: 12px; margin-top: 6px; text-align: left; }
+  .fp-upwork-stats { grid-template-columns: repeat(2,1fr); row-gap: 25px; }.fp-upwork-stats > div:nth-child(2n) { border: 0; }.fp-upwork-stats > div:last-child { grid-column: 1 / -1; }.fp-upwork-stats .fp-upwork-talent { font-size: 22px; }.fp-upwork-footer { flex-direction: column; gap: 8px; align-items: flex-start; }
 }
 @media(max-width:380px) { .fp-hero { height: 855px; }.fp-character-wrap { width: 290px; height: 435px; }.fp-hero-copy { top: 560px; }.fp-scroll { font-size: 5px; }.fp-hero-aside .fp-button { gap: 9px; }.fp-hero-top .fp-availability { font-size: 7px; }.fp-hero-top .fp-eyebrow { font-size: 6px; }.fp-skill > span:not(.fp-atomic) { font-size: 6px; }.fp-current { font-size: 6px; } }
 @media(prefers-reduced-motion:reduce) { html:has(.folio) { scroll-behavior: auto; }.folio *, .folio *::before, .folio *::after { animation: none !important; transition: none !important; }.fp-character { transform: none !important; } }

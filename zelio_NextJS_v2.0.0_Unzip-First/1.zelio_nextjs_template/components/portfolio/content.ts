@@ -8,6 +8,21 @@ export const profile = {
   photo: '/assets/imgs/profile/taimoor.jpg',
   motionVideo: '',
 }
+// Public profile fields checked through the Upwork connector on 6 October 2026.
+// Rating/JSS/talent badge are carried over from the previously approved portfolio;
+// the current connector response does not expose those three fields.
+export const upwork = {
+  title: 'Real Estate & Ecommerce Accountant | Bookkeeper | QBO & Xero Certified',
+  hourlyRate: '$12',
+  earnings: '$600+',
+  completedJobs: 4,
+  feedbackCount: 4,
+  rating: '5.0',
+  jobSuccess: '100%',
+  badge: 'Rising Talent',
+  checkedOn: '6 October 2026',
+  skills: ['Bookkeeping', 'QuickBooks Online', 'Xero', 'Bank reconciliation', 'Accounts payable', 'Accounts receivable'],
+}
 export const services = [
   { title: 'Books that balance.', name: 'Full-charge bookkeeping', text: 'Day-to-day transactions, bank reconciliations, and month-end close. A reliable foundation for every decision.', tags: ['QuickBooks', 'Xero', 'Reconciliation'] },
   { title: 'Cash flow, in focus.', name: 'Accounts payable & receivable', text: 'Organized vendor bills, payment runs, receivables tracking, and collections. Know what is coming in and going out.', tags: ['AP / AR', 'Bill.com', 'Cash flow'] },
