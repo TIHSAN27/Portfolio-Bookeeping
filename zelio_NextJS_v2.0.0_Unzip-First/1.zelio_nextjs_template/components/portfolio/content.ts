@@ -23,6 +23,14 @@ export const upwork = {
   checkedOn: '6 October 2026',
   skills: ['Bookkeeping', 'QuickBooks Online', 'Xero', 'Bank reconciliation', 'Accounts payable', 'Accounts receivable'],
 }
+// Client feedback transcribed from the user's Upwork screenshot, 7 October 2026.
+// Excerpts stop before the screenshot's collapsed text; job titles remain unchanged.
+export const upworkReviews = [
+  { title: 'Developers Needed: Node, TypeScript, Postgres, Next', date: 'Mar 25 – Apr 17, 2026', rating: '5.0', quote: 'Very good experience. Have worked with many freelancers and he is among the best.', excerpt: false, tags: ['Committed to Quality', 'Clear Communicator'] },
+  { title: 'Financial Report Analysis Expert Needed', date: 'Mar 19 – Mar 20, 2026', rating: '5.0', quote: 'Skilled in financial report analysis, including ratio analysis, forecasting, and performance evaluation. Able to present clear, data-driven recommendations.', excerpt: false, tags: ['Committed to Quality', 'Solution Oriented', 'Clear Communicator'] },
+  { title: 'Full Stack MERN Developer Needed for Small Task', date: 'Dec 23 – Dec 25, 2025', rating: '5.0', quote: 'The task was completed professionally and on time. The developer showed a good understanding of the MERN stack and handled the requirements efficiently.', excerpt: true, tags: ['Reliable', 'Detail Oriented', 'Professional'] },
+  { title: 'React Developer Needed to Fix Cursor Pointer Issues', date: 'Dec 19 – Dec 22, 2025', rating: '5.0', quote: 'Great experience working on this React task. The cursor pointer issue was identified and fixed efficiently. Clean implementation, good attention to UI details, and clear communication throughout the process.', excerpt: true, tags: ['Reliable', 'Solution Oriented', 'Clear Communicator'] },
+]
 export const services = [
   { title: 'Books that balance.', name: 'Full-charge bookkeeping', text: 'Day-to-day transactions, bank reconciliations, and month-end close. A reliable foundation for every decision.', tags: ['QuickBooks', 'Xero', 'Reconciliation'] },
   { title: 'Cash flow, in focus.', name: 'Accounts payable & receivable', text: 'Organized vendor bills, payment runs, receivables tracking, and collections. Know what is coming in and going out.', tags: ['AP / AR', 'Bill.com', 'Cash flow'] },
