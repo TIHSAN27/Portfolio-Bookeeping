@@ -24,12 +24,12 @@ export const upwork = {
   skills: ['Bookkeeping', 'QuickBooks Online', 'Xero', 'Bank reconciliation', 'Accounts payable', 'Accounts receivable'],
 }
 // Client feedback transcribed from the user's Upwork screenshot, 7 October 2026.
-// Card headings describe feedback themes, not contract titles. Quotes remain verbatim.
+// Card headings describe service areas, not the original Upwork contract titles. Quotes remain verbatim.
 export const upworkReviews = [
-  { title: 'Quality & client confidence', date: 'Mar 25 – Apr 17, 2026', rating: '5.0', quote: 'Very good experience. Have worked with many freelancers and he is among the best.', excerpt: false, tags: ['Committed to Quality', 'Clear Communicator'] },
+  { title: 'Quickbooks Cleanup', date: 'Mar 25 – Apr 17, 2026', rating: '5.0', quote: 'Very good experience. Have worked with many freelancers and he is among the best.', excerpt: false, tags: ['Committed to Quality', 'Clear Communicator'] },
   { title: 'Financial reporting & analysis', date: 'Mar 19 – Mar 20, 2026', rating: '5.0', quote: 'Skilled in financial report analysis, including ratio analysis, forecasting, and performance evaluation. Able to present clear, data-driven recommendations.', excerpt: false, tags: ['Committed to Quality', 'Solution Oriented', 'Clear Communicator'] },
-  { title: 'Professional & on time', date: 'Dec 23 – Dec 25, 2025', rating: '5.0', quote: 'The task was completed professionally and on time.', excerpt: true, tags: ['Reliable', 'Detail Oriented', 'Professional'] },
-  { title: 'Clear communication', date: 'Dec 19 – Dec 22, 2025', rating: '5.0', quote: 'clear communication throughout the process.', excerpt: true, tags: ['Reliable', 'Solution Oriented', 'Clear Communicator'] },
+  { title: 'Quickbooks Account Setup', date: 'Dec 23 – Dec 25, 2025', rating: '5.0', quote: 'The task was completed professionally and on time.', excerpt: true, tags: ['Reliable', 'Detail Oriented', 'Professional'] },
+  { title: 'Xero Guide', date: 'Dec 19 – Dec 22, 2025', rating: '5.0', quote: 'clear communication throughout the process.', excerpt: true, tags: ['Reliable', 'Solution Oriented', 'Clear Communicator'] },
 ]
 export const services = [
   { title: 'Books that balance.', name: 'Full-charge bookkeeping', text: 'Day-to-day transactions, bank reconciliations, and month-end close. A reliable foundation for every decision.', tags: ['QuickBooks', 'Xero', 'Reconciliation'] },
