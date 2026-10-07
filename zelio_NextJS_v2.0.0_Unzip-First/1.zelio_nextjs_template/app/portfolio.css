@@ -167,7 +167,7 @@ body:has(.folio) { margin: 0; background: #f4f1e8; }
 .fp-upwork-rate strong { display: block; font-size: 30px; font-weight: 500; letter-spacing: -1px; }
 .fp-upwork-rate small { font-size: 15px; letter-spacing: 0; }
 .fp-upwork-rate > span { display: block; font-size: 10px; color: var(--muted); }
-.fp-upwork-stats { display: grid; grid-template-columns: repeat(5,1fr); border-block: 1px solid #d8dfce; padding: 22px 0; }
+.fp-upwork-stats { display: grid; grid-template-columns: repeat(4,1fr); border-block: 1px solid #d8dfce; padding: 22px 0; }
 .fp-upwork-stats > div { display: flex; align-items: center; flex-direction: column; gap: 2px; border-right: 1px solid #d8dfce; padding: 0 9px; text-align: center; }
 .fp-upwork-stats > div:last-child { border: 0; }
 .fp-upwork-icon { color: #3b7139; font-size: 20px; height: 33px; line-height: 1.3; }
@@ -261,7 +261,7 @@ body:has(.folio) { margin: 0; background: #f4f1e8; }
   .fp-dialog { padding: 45px 25px 28px; }.fp-dialog h2 { font-size: 28px; }
   .fp-upwork { padding-bottom: 55px; }.fp-upwork-heading { display: block; }.fp-upwork-heading h2 { font-size: 38px; }.fp-upwork-heading .fp-button { margin-top: 23px; }.fp-upwork-panel { padding: 22px 16px; }
   .fp-upwork-person { flex-wrap: wrap; gap: 12px; }.fp-upwork-person > img { width: 54px; height: 54px; }.fp-upwork-person > div:not(.fp-upwork-rate) { flex: 1; min-width: 0; }.fp-upwork-person h3 { font-size: 17px; }.fp-upwork-person p { font-size: 11px; }.fp-upwork-rate { display: flex; align-items: baseline; justify-content: space-between; width: 100%; border-top: 1px solid #d8dfce; padding-top: 12px; margin-top: 6px; text-align: left; }
-  .fp-upwork-stats { grid-template-columns: repeat(2,1fr); row-gap: 25px; }.fp-upwork-stats > div:nth-child(2n) { border: 0; }.fp-upwork-stats > div:last-child { grid-column: 1 / -1; }.fp-upwork-stats .fp-upwork-talent { font-size: 22px; }.fp-upwork-footer { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .fp-upwork-stats { grid-template-columns: repeat(2,1fr); row-gap: 25px; }.fp-upwork-stats > div:nth-child(2n) { border: 0; }.fp-upwork-stats .fp-upwork-talent { font-size: 22px; }.fp-upwork-footer { flex-direction: column; gap: 8px; align-items: flex-start; }
 }
 @media(max-width:380px) { .fp-hero { height: 855px; }.fp-character-wrap { width: 290px; height: 435px; }.fp-hero-copy { top: 560px; }.fp-scroll { font-size: 5px; }.fp-hero-aside .fp-button { gap: 9px; }.fp-hero-top .fp-availability { font-size: 7px; }.fp-hero-top .fp-eyebrow { font-size: 6px; }.fp-skill > span:not(.fp-atomic) { font-size: 6px; }.fp-current { font-size: 6px; } }
 @media(prefers-reduced-motion:reduce) { html:has(.folio) { scroll-behavior: auto; }.folio *, .folio *::before, .folio *::after { animation: none !important; transition: none !important; }.fp-character { transform: none !important; } }

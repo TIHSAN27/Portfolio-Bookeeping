@@ -9,17 +9,16 @@ export const profile = {
   motionVideo: '',
 }
 // Public profile fields checked through the Upwork connector on 6 October 2026.
-// Rating/JSS/talent badge are carried over from the previously approved portfolio;
+// Rating/JSS are carried over; Top Rated badge is supplied by the user;
 // the current connector response does not expose those three fields.
 export const upwork = {
   title: 'Real Estate & Ecommerce Accountant | Bookkeeper | QBO & Xero Certified',
   hourlyRate: '$12',
-  earnings: '$600+',
   completedJobs: 4,
   feedbackCount: 4,
   rating: '5.0',
   jobSuccess: '100%',
-  badge: 'Rising Talent',
+  badge: 'Top Rated',
   checkedOn: '6 October 2026',
   skills: ['Bookkeeping', 'QuickBooks Online', 'Xero', 'Bank reconciliation', 'Accounts payable', 'Accounts receivable'],
 }

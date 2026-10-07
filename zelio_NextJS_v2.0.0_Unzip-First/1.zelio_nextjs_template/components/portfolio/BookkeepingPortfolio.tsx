@@ -56,7 +56,6 @@ function UpworkProfile() {
         <div><span className="fp-upwork-icon" aria-hidden="true">↗</span><strong className="fp-upwork-talent">{upwork.badge}</strong><span>Talent badge</span></div>
         <div><span className="fp-upwork-icon" aria-hidden="true">★</span><strong>{upwork.rating}<small>/5</small></strong><span>Client rating · {upwork.feedbackCount} feedback entries</span></div>
         <div><span className="fp-upwork-icon" aria-hidden="true">✓</span><strong>{upwork.completedJobs}</strong><span>Completed jobs</span></div>
-        <div><span className="fp-upwork-icon" aria-hidden="true">$</span><strong>{upwork.earnings}</strong><span>Total earned on Upwork</span></div>
       </div>
       <div className="fp-upwork-skills">{upwork.skills.map(skill => <span key={skill}>{skill}</span>)}</div>
       <div className="fp-reviews-heading"><h3 id="upwork-reviews-title">What my clients say.</h3><span>Service areas · Client feedback from past engagements</span></div>
@@ -69,7 +68,7 @@ function UpworkProfile() {
           <a href={profile.upwork} target="_blank" rel="noreferrer">{review.excerpt ? 'Read full review' : 'View on Upwork'} <Arrow /></a>
         </article>)}
       </div>
-      <div className="fp-upwork-footer"><span>Rate, earnings & job counts checked {upwork.checkedOn}.</span><a href={profile.upwork} target="_blank" rel="noreferrer">See current badges & client feedback <Arrow /></a></div>
+      <div className="fp-upwork-footer"><span>Rate & job counts checked {upwork.checkedOn}.</span><a href={profile.upwork} target="_blank" rel="noreferrer">See current badges & client feedback <Arrow /></a></div>
     </div>
   </section>
 }
@@ -100,7 +99,7 @@ export default function BookkeepingPortfolio() {
         <aside className="fp-hero-aside fp-hero-details" aria-label="Bookkeeping support"><span className="fp-eyebrow">WHAT I BRING TO YOUR BOOKS</span><h2>Accurate records.<br /><em>A clearer picture.</em></h2><ul><li><strong>Keep the everyday organized</strong><span>Transaction coding, vendor bills, invoicing, and AP/AR tracking.</span></li><li><strong>Close with confidence</strong><span>Bank reconciliations, ledger reviews, and monthly financial statements.</span></li><li><strong>Get back on track</strong><span>Bookkeeping cleanup, catch-up, and practical reporting workflows.</span></li></ul><span className="fp-small">QuickBooks Online &amp; Desktop · Xero · Excel</span><a className="fp-button" href="#contact">Discuss your bookkeeping <Arrow /></a></aside>
         <a className="fp-scroll" href="#about"><span>↓</span> SCROLL TO GET ACQUAINTED</a>
       </section>
-      <div className="fp-proof-strip"><div className="fp-shell fp-proof-grid"><div><strong>5+</strong><span>Years of experience</span></div><div><strong>$5M+</strong><span>Receivables tracked</span></div><a href={profile.upwork} target="_blank" rel="noreferrer"><strong>100% <span className="fp-proof-star">✦</span></strong><span>Upwork Job Success <Arrow /></span></a><a href={profile.upwork} target="_blank" rel="noreferrer"><strong className="fp-talent"><span>✦</span> Rising Talent</strong><span>On Upwork <Arrow /></span></a></div></div>
+      <div className="fp-proof-strip"><div className="fp-shell fp-proof-grid"><div><strong>5+</strong><span>Years of experience</span></div><div><strong>$5M+</strong><span>Receivables tracked</span></div><a href={profile.upwork} target="_blank" rel="noreferrer"><strong>100% <span className="fp-proof-star">✦</span></strong><span>Upwork Job Success <Arrow /></span></a><a href={profile.upwork} target="_blank" rel="noreferrer"><strong className="fp-talent"><span>✦</span> {upwork.badge}</strong><span>On Upwork <Arrow /></span></a></div></div>
       <section className="fp-shell fp-section fp-about" id="about" aria-labelledby="about-title">
         <div className="fp-about-copy"><span className="fp-eyebrow">01 / THE PERSON BEHIND THE NUMBERS</span><h2 id="about-title">Hi, I’m <em>Taimoor.</em></h2><p className="fp-intro">I turn complicated books into<br />a clearer picture of your business.</p><p>I’m a remote bookkeeper and financial reporting specialist working with US and Canadian businesses. From the first transaction to the final month-end report, I bring structure, care, and a close eye for detail.</p><p>My focus? Reliable records, smoother processes, and financial information you can actually use.</p><div className="fp-inline-links"><a href={profile.upwork} target="_blank" rel="noreferrer">Meet me on Upwork <Arrow /></a><a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <Arrow /></a></div></div>
         <ProfileCard />
