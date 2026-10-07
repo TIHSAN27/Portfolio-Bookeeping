@@ -59,11 +59,11 @@ function UpworkProfile() {
         <div><span className="fp-upwork-icon" aria-hidden="true">$</span><strong>{upwork.earnings}</strong><span>Total earned on Upwork</span></div>
       </div>
       <div className="fp-upwork-skills">{upwork.skills.map(skill => <span key={skill}>{skill}</span>)}</div>
-      <div className="fp-reviews-heading"><h3 id="upwork-reviews-title">What my clients say.</h3><span>Feedback from finance &amp; development engagements</span></div>
+      <div className="fp-reviews-heading"><h3 id="upwork-reviews-title">What my clients say.</h3><span>Financial expertise &amp; professional service</span></div>
       <div className="fp-reviews" role="region" aria-labelledby="upwork-reviews-title" tabIndex={0}>
         {upworkReviews.map(review => <article className="fp-review" key={review.title}>
           <div className="fp-review-rating"><span aria-hidden="true">★★★★★</span><strong>{review.rating}<span className="fp-sr-only"> out of 5 stars</span></strong><span>Upwork client</span></div>
-          <h4>{review.title}</h4><span className="fp-review-date">{review.date}</span>
+          <h4>{review.title}</h4><span className="fp-review-date">{review.date}{review.excerpt ? ' · Client feedback excerpt' : ''}</span>
           <blockquote><p>“{review.quote}”</p></blockquote>
           <div className="fp-review-tags">{review.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
           <a href={profile.upwork} target="_blank" rel="noreferrer">{review.excerpt ? 'Read full review' : 'View on Upwork'} <Arrow /></a>
