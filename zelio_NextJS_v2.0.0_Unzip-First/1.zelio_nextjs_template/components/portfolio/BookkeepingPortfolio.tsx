@@ -64,63 +64,6 @@ function UpworkProfile() {
   </section>
 }
 
-function Character() {
-  const stage = useRef<HTMLDivElement>(null)
-  const video = useRef<HTMLVideoElement>(null)
-  const [paused, setPaused] = useState(false)
-  const [reducedMotion, setReducedMotion] = useState(true)
-  const [videoFailed, setVideoFailed] = useState(false)
-  useEffect(() => {
-    const query = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const update = () => setReducedMotion(query.matches)
-    update()
-    query.addEventListener('change', update)
-    return () => query.removeEventListener('change', update)
-  }, [])
-  const still = paused || reducedMotion
-  useEffect(() => {
-    if (!video.current) return
-    if (still) video.current.pause()
-    else video.current.play().catch(() => setVideoFailed(true))
-  }, [still])
-  useEffect(() => {
-    const element = stage.current
-    if (!element || still || !window.matchMedia('(pointer: fine)').matches) return
-    let frame = 0
-    const move = (event: PointerEvent) => {
-      cancelAnimationFrame(frame)
-      frame = requestAnimationFrame(() => {
-        const x = Math.max(-1, Math.min(1, (event.clientX / window.innerWidth - .5) * 2))
-        const y = Math.max(-1, Math.min(1, (event.clientY / window.innerHeight - .5) * 2))
-        element.style.setProperty('--look-x', `${x * 9}px`)
-        element.style.setProperty('--look-y', `${y * 3}px`)
-        element.style.setProperty('--lean', `${x * 1.2}deg`)
-        element.style.setProperty('--head-angle', `${x * 3}deg`)
-        element.style.setProperty('--head-x', `${x * 2}px`)
-      })
-    }
-    const reset = () => {
-      cancelAnimationFrame(frame)
-      element.style.setProperty('--look-x', '0px')
-      element.style.setProperty('--look-y', '0px')
-      element.style.setProperty('--lean', '0deg')
-      element.style.setProperty('--head-angle', '0deg')
-      element.style.setProperty('--head-x', '0px')
-    }
-    window.addEventListener('pointermove', move, { passive: true })
-    document.documentElement.addEventListener('pointerleave', reset)
-    return () => { window.removeEventListener('pointermove', move); document.documentElement.removeEventListener('pointerleave', reset); reset() }
-  }, [still])
-  return <div className={`fp-character-wrap ${still ? 'is-still' : ''}`}>
-    <div className="fp-character-shadow" />
-    <div className="fp-character" ref={stage}>
-      {profile.motionVideo && !videoFailed ? <video ref={video} className="fp-character-art" src={profile.motionVideo} poster={profile.portrait} muted loop playsInline preload="none" onError={() => setVideoFailed(true)} aria-label="Animated portrait of Taimoor in a charcoal suit" /> : <div className="fp-character-art fp-portrait-rig"><img className="fp-portrait-body" src={profile.portrait} alt="Taimoor's AI-created full-length portrait in a charcoal suit and burgundy tie" width="1024" height="1536" fetchPriority="high" /><img className="fp-portrait-head" src={profile.portrait} alt="" aria-hidden="true" width="1024" height="1536" /></div>}
-    </div>
-    <span className="fp-portrait-note">A little personality. A lot of precision.</span>
-    {!reducedMotion && <button className="fp-motion" type="button" aria-pressed={paused} onClick={() => setPaused(!paused)}>{paused ? '▶ Play motion' : 'Ⅱ Pause motion'}</button>}
-  </div>
-}
-
 function WorkVisual({ kind }: { kind: string }) {
   return <div className={`fp-work-visual fp-${kind}`} aria-hidden="true">
     {kind === 'ledger' ? <div className="fp-mini-sheet"><div className="fp-mini-head"><span>PAYABLES REGISTER</span><span className="fp-mini-dot" /></div><div className="fp-sheet-columns"><span>Entity</span><span>Period</span><span>Status</span></div>{['Holding LLC', 'Property LLC', 'Servicing LLC'].map((v, i) => <div className="fp-sheet-row" key={v}><span>{v}</span><span>0{i + 1}</span><span>✓ Reconciled</span></div>)}<div className="fp-sheet-foot">One register. Fully connected.</div></div> : kind === 'chart' ? <div className="fp-mini-chart"><span className="fp-mini-head">RECEIVABLES OVERVIEW</span><strong>Clarity, at a glance.</strong><div className="fp-bars">{[40, 58, 49, 75, 65, 90, 79].map((n, i) => <span key={i} style={{ height: `${n}%` }} />)}</div><div className="fp-chart-labels"><span>Track</span><span>Review</span><span>Collect</span></div></div> : <div className="fp-mini-close"><span className="fp-close-check">✓</span><strong>All in order.</strong><span>Reconcile. Review. Close.</span><div><span>Bank accounts ✓</span><span>General ledger ✓</span><span>Month-end reports ✓</span></div></div>}
@@ -142,9 +85,9 @@ export default function BookkeepingPortfolio() {
     <main id="main">
       <section className="fp-hero fp-shell" id="home" aria-labelledby="hero-title">
         <div className="fp-hero-top"><span className="fp-eyebrow">INDEPENDENT BOOKKEEPER · GLOBAL CLIENTS</span><span className="fp-availability"><i /> Open to new engagements</span></div>
-        <div className="fp-hero-name" aria-hidden="true">TAIMOOR</div><Character />
-        <div className="fp-hero-copy"><span className="fp-eyebrow">HELLO, I’M TAIMOOR.</span><h1 id="hero-title">Your books.<br />My <em>expertise.</em></h1><p>Clear records. Confident decisions.<br />Bookkeeping with a human touch.</p></div>
-        <div className="fp-hero-aside"><span className="fp-hand-note">Behind every number,<br />there’s your business.</span><a className="fp-button" href="#work">Explore my work <Arrow /></a><span className="fp-small">US & Canada · Working remotely</span></div>
+        <div className="fp-hero-name" aria-hidden="true">TAIMOOR</div>
+        <div className="fp-hero-copy"><span className="fp-eyebrow">HELLO, I’M TAIMOOR.</span><h1 id="hero-title">Your books.<br />My <em>expertise.</em></h1><p>Full-charge bookkeeping for US and Canadian businesses. I organize daily transactions, reconcile accounts, manage payables and receivables, and prepare clear month-end reports.</p></div>
+        <aside className="fp-hero-aside fp-hero-details" aria-label="Bookkeeping support"><span className="fp-eyebrow">WHAT I BRING TO YOUR BOOKS</span><h2>Accurate records.<br /><em>A clearer picture.</em></h2><ul><li><strong>Keep the everyday organized</strong><span>Transaction coding, vendor bills, invoicing, and AP/AR tracking.</span></li><li><strong>Close with confidence</strong><span>Bank reconciliations, ledger reviews, and monthly financial statements.</span></li><li><strong>Get back on track</strong><span>Bookkeeping cleanup, catch-up, and practical reporting workflows.</span></li></ul><span className="fp-small">QuickBooks Online &amp; Desktop · Xero · Excel</span><a className="fp-button" href="#contact">Discuss your bookkeeping <Arrow /></a></aside>
         <a className="fp-scroll" href="#about"><span>↓</span> SCROLL TO GET ACQUAINTED</a>
       </section>
       <div className="fp-proof-strip"><div className="fp-shell fp-proof-grid"><div><strong>5+</strong><span>Years of experience</span></div><div><strong>$5M+</strong><span>Receivables tracked</span></div><a href={profile.upwork} target="_blank" rel="noreferrer"><strong>100% <span className="fp-proof-star">✦</span></strong><span>Upwork Job Success <Arrow /></span></a><a href={profile.upwork} target="_blank" rel="noreferrer"><strong className="fp-talent"><span>✦</span> Rising Talent</strong><span>On Upwork <Arrow /></span></a></div></div>
